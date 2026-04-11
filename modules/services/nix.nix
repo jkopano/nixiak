@@ -19,8 +19,6 @@
         fzy
         nix-output-monitor
         nh
-        # with # "with" package seems unique or custom? "0-unstable..." in nvd.
-        # It's likely `pkgs.with` (shell wrapper).
       ];
     };
 }

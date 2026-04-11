@@ -48,5 +48,24 @@
           autotype_default = {USERNAME}{TAB}{PASSWORD}{ENTER}
         '';
       };
+
+      systemd.user.services.keepassxc-autostart = {
+        Unit = {
+          Description = "Keepassxc";
+          After = [
+            "graphical-session-pre.target"
+            "rclone-mount:.srv.sftpuser.data.@sftp.service"
+          ];
+        };
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
+        };
+        Service = {
+          Type = "simple";
+          ExecStart = "${pkgs.keepassxc}/bin/keepassxc";
+          Restart = "on-failure";
+          RestartSec = "10s";
+        };
+      };
     };
 }
