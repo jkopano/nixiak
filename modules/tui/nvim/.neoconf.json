@@ -1,0 +1,15 @@
+{
+  "neodev": {
+    "library": {
+      "enabled": true,
+      "plugins": true
+    }
+  },
+  "neoconf": {
+    "plugins": {
+      "emmylua_ls": {
+        "enabled": true
+      }
+    }
+  }
+}

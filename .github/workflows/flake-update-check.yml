@@ -1,0 +1,66 @@
+name: Flake Update Check
+
+on:
+  schedule:
+    # Run every second day at 00:00 UTC
+    - cron: '0 0 */2 * *'
+  workflow_dispatch: # Allow manual trigger
+  pull_request:
+    paths:
+      - 'flake.nix'
+      - 'flake.lock'
+
+jobs:
+  check-flake-update:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          extra-conf: |
+            experimental-features = nix-command flakes
+
+      - name: Setup Nix cache
+        uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Check current flake
+        run: |
+          echo "=== Current flake.lock state ==="
+          nix flake metadata
+          nix flake check
+
+      - name: Update flake
+        run: |
+          echo "=== Updating flake inputs ==="
+          nix flake update
+
+      - name: Show what changed
+        run: |
+          echo "=== Changes after update ==="
+          git diff flake.lock
+
+      - name: Check updated flake
+        run: |
+          echo "=== Checking updated flake ==="
+          nix flake check
+
+      - name: Try building system (dry-run)
+        run: |
+          echo "=== Testing system build ==="
+          nix build .#nixosConfigurations.jkopano.config.system.build.toplevel --dry-run
+
+      - name: Post results
+        if: always()
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "✅ Flake update check passed!"
+          else
+            echo "❌ Flake update check failed!"
+            exit 1
+          fi

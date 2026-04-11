@@ -1,0 +1,19 @@
+{
+  "type.weakNilCheck": false,
+  "runtime.special": {
+    "love.filesystem.load": "loadfile"
+  },
+  "workspace.library": [
+    "${3rd}/love2d/library",
+    "/usr/share/lua/5.1/loop.lua",
+    "/usr/share/lua/5.1/middleclass.lua",
+    "/usr/share/lua/5.1/evolved.lua",
+    "/usr/share/lua/5.1/fun.lua"
+  ],
+  "diagnostics.globals": [
+    "getWindow",
+    "x",
+    "fun",
+    "vim"
+  ]
+}
