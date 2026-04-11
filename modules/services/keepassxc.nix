@@ -62,7 +62,7 @@
         };
         Service = {
           Type = "simple";
-          ExecStart = "${pkgs.keepassxc}/bin/keepassxc";
+          ExecStart = "${pkgs.keepassxc}/bin/keepassxc --keyfile ${KEEPASSXCFILE} ${KEEPASSXCDT}";
           Restart = "on-failure";
           RestartSec = "10s";
         };
