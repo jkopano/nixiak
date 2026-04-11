@@ -27,3 +27,5 @@ nix flake update
 - Home Manager is applied through the same flake
 - this repo is machine-specific rather than a generic template - so i would
   not recommend to use it as is - rather take whatever snippet of code you wish.
+- This is not original repo. I wasn't 100% sure if i didn't have some potential sensitive data in 
+  git history, so i just decided to make a new one.
