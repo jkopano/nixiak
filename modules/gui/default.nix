@@ -57,6 +57,7 @@
           chromium
           gimp
           aseprite
+          remmina
           libresprite
           processing
           syncplay
