@@ -60,6 +60,7 @@
           nerd-fonts.jetbrains-mono
           nerd-fonts.ubuntu-mono
           nerd-fonts.iosevka
+          nerd-fonts.zed-mono
           nerd-fonts.fantasque-sans-mono
           nerd-fonts.agave
           nerd-fonts.caskaydia-mono

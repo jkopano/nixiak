@@ -57,7 +57,6 @@
           chromium
           gimp
           aseprite
-          remmina
           libresprite
           processing
           syncplay
@@ -88,6 +87,8 @@
 
           zed-editor
           parsec-bin
+          kiro-cli
+          kiro
 
           tracy
         ];

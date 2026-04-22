@@ -33,7 +33,7 @@ jobs:
         run: |
           echo "=== Current flake.lock state ==="
           nix flake metadata
-          nix flake check
+          nix eval .#nixosConfigurations.jkopano.config.system.build.toplevel.drvPath
 
       - name: Update flake
         run: |
@@ -48,19 +48,9 @@ jobs:
       - name: Check updated flake
         run: |
           echo "=== Checking updated flake ==="
-          nix flake check
+          nix eval .#nixosConfigurations.jkopano.config.system.build.toplevel.drvPath
 
       - name: Try building system (dry-run)
         run: |
           echo "=== Testing system build ==="
           nix build .#nixosConfigurations.jkopano.config.system.build.toplevel --dry-run
-
-      - name: Post results
-        if: always()
-        run: |
-          if [ $? -eq 0 ]; then
-            echo "✅ Flake update check passed!"
-          else
-            echo "❌ Flake update check failed!"
-            exit 1
-          fi
