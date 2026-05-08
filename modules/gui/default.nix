@@ -91,6 +91,8 @@
           kiro
 
           tracy
+          vinegar
+          neovide
         ];
 
         gtk = {
