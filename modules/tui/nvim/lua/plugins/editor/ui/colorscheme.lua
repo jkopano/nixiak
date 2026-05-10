@@ -1,1 +1,1 @@
-/nix/store/s50r6mash6a6zzwlx4d4qwmdjk31hikd-home-manager-files/.config/nixos/modules/tui/nvim/lua/plugins/editor/ui/colorscheme.lua
+/nix/store/ryxxhvid0li02c76fn9179b61869v8sz-home-manager-files/.config/nixos/modules/tui/nvim/lua/plugins/editor/ui/colorscheme.lua

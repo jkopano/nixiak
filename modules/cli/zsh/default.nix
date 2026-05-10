@@ -121,11 +121,12 @@
               };
             }
           ];
+
           initContent =
             let
               secretTool = "${pkgs.libsecret}/bin/secret-tool";
               timeout = "${pkgs.coreutils}/bin/timeout";
-              zshConfig = lib.mkAfter ''
+              zshConfig = lib.mkOrder 1000 ''
                 zstyle ':completion:*' menu no
                 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
                 zstyle ':fzf-tab:*' use-fzf-default-opts yes
@@ -150,9 +151,15 @@
 
                 load_secret_tool_env
               '';
+
+              devenvConfig = lib.mkOrder 3500 ''
+                eval "$(devenv hook zsh)"
+              '';
+
             in
             lib.mkMerge [
               zshConfig
+              devenvConfig
             ];
         };
       };
