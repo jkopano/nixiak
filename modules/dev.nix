@@ -1,4 +1,4 @@
-{ den, ... }:
+{ den, inputs, ... }:
 {
   den.aspects.dev = {
     nixos =
@@ -154,6 +154,7 @@
           libXxf86vm
           dotnetCorePackages.sdk_9_0_1xx-bin
           devenv
+          # inputs.devenv.packages.${pkgs.system}.devenv
           exercism
           python314
           typst

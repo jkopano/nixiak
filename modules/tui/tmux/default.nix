@@ -124,6 +124,12 @@
           bind-key -n M-[ next-layout
           bind-key -n M-] previous-layout
 
+          bind-key -n M-WheelUpStatus previous-window
+          bind-key -n M-WheelUpPane previous-window
+
+          bind-key -n M-WheelDownStatus next-window
+          bind-key -n M-WheelDownPane next-window
+
           bind-key -r -n   C-S-K   resize-pane -U 8
           bind-key -r -n   C-S-J   resize-pane -D 8
           bind-key -r -n   C-S-H   resize-pane -L 8

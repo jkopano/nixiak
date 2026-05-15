@@ -153,7 +153,7 @@
               '';
 
               devenvConfig = lib.mkOrder 3500 ''
-                eval "$(devenv hook zsh)"
+                # eval "$(devenv hook zsh)"
               '';
 
             in

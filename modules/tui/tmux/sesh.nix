@@ -12,7 +12,7 @@
             {
               name = "home";
               path = "~/";
-              startup_command = "ls";
+              # startup_command = "ls";
             }
           ];
           default_session = {
