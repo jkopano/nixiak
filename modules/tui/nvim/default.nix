@@ -22,6 +22,8 @@
         enable = true;
         vimAlias = true;
         viAlias = true;
+        withPython3 = true;
+        withRuby = true;
         extraPackages = with pkgs; [
           sqlit-tui
           fd

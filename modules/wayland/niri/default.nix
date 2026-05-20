@@ -29,7 +29,7 @@
         ];
         programs.niri = {
           enable = true;
-          package = lib.mkForce inputs.niri.packages.${pkgs.system}.niri-unstable;
+          package = lib.mkForce inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
         };
 
         home = {

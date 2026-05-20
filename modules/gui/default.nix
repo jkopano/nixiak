@@ -21,7 +21,7 @@
       }:
       let
         pkgsStable = import inputs.nixpkgs-stable {
-          inherit (pkgs) system;
+          system = pkgs.stdenv.hostPlatform.system;
           config.allowUnfree = true;
         };
         sftp = "${config.xdg.dataHome}/srv/sftp";
@@ -97,6 +97,7 @@
 
         gtk = {
           enable = true;
+          gtk4.theme = config.gtk.theme;
           iconTheme = {
             package = pkgs.nordzy-icon-theme;
             name = "Nordzy-dark";

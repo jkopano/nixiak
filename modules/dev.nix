@@ -4,7 +4,16 @@
     nixos =
       { pkgs, options, ... }:
       {
+        documentation = {
+          enable = true;
+          man.enable = true;
+          man.generateCaches = true;
+          dev.enable = true;
+        };
+
         environment.systemPackages = with pkgs; [
+          man-pages
+          man-pages-posix
           uv
           dotnetCorePackages.dotnet_9.sdk
         ];
@@ -141,6 +150,10 @@
     homeManager =
       { pkgs, ... }:
       {
+        programs.man = {
+          enable = true;
+          generateCaches = true;
+        };
         home.packages = with pkgs; [
           bun
           love

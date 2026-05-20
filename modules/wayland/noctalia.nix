@@ -95,6 +95,9 @@
                   id = "plugin:screen-recorder";
                 }
                 {
+                  id = "plugin:git-companion";
+                }
+                {
                   id = "plugin:tailscale";
                 }
                 {
@@ -171,6 +174,10 @@
                 sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
               };
               notes-scratchpad = {
+                enabled = true;
+                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+              };
+              git-companion = {
                 enabled = true;
                 sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
               };
