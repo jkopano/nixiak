@@ -27,6 +27,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     # Tools
+    nur.url = "github:nix-community/NUR";
     xremap-flake.url = "github:xremap/nix-flake";
     nix-sweep.url = "github:jzbor/nix-sweep";
     direnv-instant.url = "github:Mic92/direnv-instant";

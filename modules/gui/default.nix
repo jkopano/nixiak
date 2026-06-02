@@ -73,7 +73,7 @@
           kdePackages.kdenlive
 
           ardour
-          supercollider
+          # supercollider
           foxdot
           chuck
           # miniaudicle

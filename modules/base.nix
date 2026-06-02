@@ -33,6 +33,7 @@
           strace
           acpi
           lsof
+          psmisc
           lm_sensors
           pciutils
           usbutils
@@ -56,7 +57,7 @@
           BROWSER = "firefox";
           TERMINAL = "kitty";
           TMUX_SESSION_FILE = "${config.var.configDir}/modules/tui/tmux/tmux_sessions";
-          SSH_ASKPASS_REQUIRE = "prefer";
+          # SSH_ASKPASS_REQUIRE = "prefer";
           XDG_RUNTIME_DIR = "/run/user/$UID";
         };
       };

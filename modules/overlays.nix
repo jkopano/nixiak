@@ -8,6 +8,9 @@
     { ... }:
     {
       nixpkgs.overlays = [
+        # NUR
+        inputs.nur.overlays.default
+
         # Firefox addons
         inputs.firefox-addons.overlays.default
 
