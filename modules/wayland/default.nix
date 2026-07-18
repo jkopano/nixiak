@@ -49,8 +49,6 @@
           wl-clipboard
           qrencode
           warp
-
-          gnomecast
         ];
       };
   };

@@ -54,6 +54,7 @@
           base00 = "131313";
           base01 = "1d2021";
         };
+        home.pointerCursor.enable = true;
         home.packages = with pkgs; [
           jetbrains-mono
           maple-mono.truetype

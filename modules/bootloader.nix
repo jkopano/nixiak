@@ -4,7 +4,7 @@
     { pkgs, lib, ... }:
     {
       boot = {
-        kernelPackages = pkgs.nur.repos.Ev357.linux-patched;
+        # kernelPackages = pkgs.nur.repos.Ev357.linux-patched;
         plymouth = {
           enable = true;
           theme = lib.mkForce "rings";

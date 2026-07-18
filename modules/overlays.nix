@@ -28,6 +28,24 @@
         #   });
         # })
 
+        (_final: prev: {
+          gtksourceview5 = prev.gtksourceview5.overrideAttrs (_old: {
+            doCheck = false;
+          });
+
+          pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
+            (
+              python-final: python-prev: {
+                paste = python-prev.paste.overridePythonAttrs (old: {
+                  nativeCheckInputs = (old.nativeCheckInputs or [ ]) ++ [
+                    python-final.setuptools
+                  ];
+                });
+              }
+            )
+          ];
+        })
+
         inputs.niri.overlays.niri
         # inputs.neovim-nightly-overlay.overlays.default
       ];

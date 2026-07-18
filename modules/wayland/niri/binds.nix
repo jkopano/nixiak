@@ -6,7 +6,7 @@
       noctalia =
         cmd:
         [
-          "noctalia-shell"
+          "noctalia"
           "ipc"
           "call"
         ]

@@ -28,13 +28,37 @@ return {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
       -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      local function mason_off(O)
-        O = O or {}
-        O.mason = false
-        return O
-      end
-
       opts.inlay_hints = { enabled = false }
+
+      -- opts.servers.ruff = {}
+      opts.servers.clangd = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--clang-tidy",
+          "--header-insertion=iwyu",
+          "--completion-style=detailed",
+          "--function-arg-placeholders",
+          "--fallback-style=llvm",
+          "--j=8",
+          "--pch-storage=disk",
+        },
+        init_options = {
+          fallbackFlags = { "-std=c++23" },
+        },
+      }
+
+      opts.servers.ruff.cmd = { "uv", "run", "ruff", "server" }
+      opts.servers.pyright.cmd = { "uv", "run", "pyright-langserver", "--stdio" }
+      opts.setup = {
+        ["ruff"] = function()
+          Snacks.util.lsp.on({ name = "ruff" }, function(_, client)
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+          end)
+        end,
+      }
+
       local servers_to_off_mason = {
         "bashls",
         "tinymist",
@@ -68,20 +92,9 @@ return {
       }
 
       for _, lsp in ipairs(servers_to_off_mason) do
-        opts.servers[lsp] = mason_off()
+        opts.servers[lsp] = opts.servers[lsp] or {}
+        opts.servers[lsp].mason = false
       end
-
-      -- opts.servers.ruff = {}
-      opts.servers.ruff.cmd = { "uv", "run", "ruff", "server" }
-      opts.servers.pyright.cmd = { "uv", "run", "pyright-langserver", "--stdio" }
-      opts.setup = {
-        ["ruff"] = function()
-          Snacks.util.lsp.on({ name = "ruff" }, function(_, client)
-            -- Disable hover in favor of Pyright
-            client.server_capabilities.hoverProvider = false
-          end)
-        end,
-      }
 
       return opts
     end,

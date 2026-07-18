@@ -97,7 +97,7 @@
 
         gtk = {
           enable = true;
-          gtk4.theme = config.gtk.theme;
+          gtk4.theme = lib.mkDefault config.gtk.theme;
           iconTheme = {
             package = pkgs.nordzy-icon-theme;
             name = "Nordzy-dark";

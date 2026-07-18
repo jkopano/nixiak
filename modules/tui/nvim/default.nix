@@ -35,6 +35,7 @@
           nodejs_24
           gcc
           llvmPackages_21.clang-unwrapped
+          llvmPackages_21.clang-tools
           ghc
           python313
 

@@ -7,7 +7,7 @@
         qwen-code
         claude-code
         claude-monitor
-        claude-code-acp
+        claude-agent-acp
         gemini-cli
         codex
       ];

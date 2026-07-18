@@ -21,7 +21,7 @@
         };
         spawn-at-startup = [
           # (makeCommand "hyprlock")
-          (makeCommand "noctalia-shell")
+          (makeCommand "noctalia")
           (makeCommand "systemctl --user restart xremap.service")
           (makeCommand "vicinae server")
           {
@@ -46,6 +46,9 @@
         ];
         input = {
           keyboard = {
+            xkb = {
+              layout = "pl";
+            };
             repeat-delay = 180;
             repeat-rate = 50;
           };

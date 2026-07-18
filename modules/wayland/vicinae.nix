@@ -16,7 +16,7 @@
           escape_key_behavior = "close_window";
           font = {
             normal = {
-              size = 18;
+              size = lib.mkForce 18;
               normal = "MapleMono Nerd Font";
             };
           };

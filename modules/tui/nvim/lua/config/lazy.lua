@@ -53,7 +53,7 @@ require("lazy").setup({
     { import = extras .. "lang.cmake" },
     { import = extras .. "lang.go" },
     -- { import = extras .. "lang.sql" },
-    -- { import = extras .. "lsp.none-ls" },
+    { import = extras .. "lsp.none-ls" },
     { import = extras .. "util.dot" },
     { import = extras .. "util.octo" },
     { import = extras .. "util.mini-hipatterns" },

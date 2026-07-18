@@ -42,6 +42,7 @@
         atuin = {
           enable = true;
           enableZshIntegration = true;
+          flags = [ "--disable-up-arrow" ];
         };
         eza = {
           enable = true;
@@ -156,9 +157,17 @@
                 # eval "$(devenv hook zsh)"
               '';
 
+              historyNavigationConfig = lib.mkOrder 1500 ''
+                bindkey '^[[A' history-substring-search-up
+                bindkey '^[OA' history-substring-search-up
+                bindkey '^[[B' history-substring-search-down
+                bindkey '^[OB' history-substring-search-down
+              '';
+
             in
             lib.mkMerge [
               zshConfig
+              historyNavigationConfig
               devenvConfig
             ];
         };
