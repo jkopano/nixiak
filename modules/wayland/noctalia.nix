@@ -27,7 +27,7 @@
       stylix.targets.noctalia-shell.enable = false;
       programs.noctalia-shell = {
         enable = true;
-        # systemd.enable = true;
+        systemd.enable = true;
         settings = {
           appLauncher = {
             terminalCommand = "kitty -e"; # or "gnome-terminal --", "alacritty -e", etc.

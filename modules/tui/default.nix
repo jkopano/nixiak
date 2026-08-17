@@ -8,6 +8,7 @@
   den.aspects.tui = {
     includes = [
       <tui/fzf>
+      <tui/helix>
       <tui/nvim>
       <tui/tmux>
       <tui/nh>

@@ -38,13 +38,13 @@ return {
           "--clang-tidy",
           "--header-insertion=iwyu",
           "--completion-style=detailed",
-          "--function-arg-placeholders",
+          "--function-arg-placeholders=true",
           "--fallback-style=llvm",
           "--j=8",
           "--pch-storage=disk",
         },
         init_options = {
-          fallbackFlags = { "-std=c++23" },
+          fallbackFlags = { "-std=c++26" },
         },
       }
 
