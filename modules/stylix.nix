@@ -30,6 +30,15 @@
               package = pkgs.nerd-fonts.jetbrains-mono;
               name = "JetBrains Mono";
             };
+
+            # monospace = {
+            #   package = pkgs.nerd-fonts.jetbrains-mono;
+            #   name = "JetBrainsMono Nerd Font Mono";
+            # };
+            # monospace = {
+            #   package = pkgs.nerd-fonts.caskaydia-mono;
+            #   name = "CaskaydiaMono Nerd Font Mono";
+            # };
             sansSerif = {
               package = pkgs.montserrat;
               name = "Maple Mono";

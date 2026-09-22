@@ -4,6 +4,7 @@ return {
   opts = function(_, opts)
     opts.formatters_by_ft = {
       cs = { "csharpier" },
+      php = { "duster" },
     }
     opts.formatters = {
       csharpier = {

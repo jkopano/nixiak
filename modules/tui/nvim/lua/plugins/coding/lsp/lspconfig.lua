@@ -31,6 +31,15 @@ return {
       opts.inlay_hints = { enabled = false }
 
       -- opts.servers.ruff = {}
+      opts.servers.zls = {
+        mason = false,
+        settings = {
+          zls = {
+            build_on_save_args = { "-fincremental" },
+            semantic_tokens = "partial",
+          },
+        },
+      }
       opts.servers.clangd = {
         cmd = {
           "clangd",

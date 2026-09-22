@@ -30,7 +30,7 @@
         systemd.enable = true;
         settings = {
           appLauncher = {
-            terminalCommand = "kitty -e"; # or "gnome-terminal --", "alacritty -e", etc.
+            terminalCommand = "ghostty -e"; # or "gnome-terminal --", "alacritty -e", etc.
           };
           # colorSchemes = {
           #   darkMode = true;

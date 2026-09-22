@@ -1,7 +1,12 @@
 { den, ... }:
 {
   den.aspects.wayland._.niri._.binds.homeManager =
-    { lib, config, pkgs, ... }:
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     let
       noctalia =
         cmd:
@@ -19,8 +24,8 @@
           set-volume = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@";
           playerctl = spawn "${pkgs.playerctl}/bin/playerctl";
           browser = spawn "${lib.getExe pkgs.firefox}";
-          terminal = spawn "${lib.getExe pkgs.kitty}";
-          tmux = spawn "${lib.getExe pkgs.kitty}" "-e" "tmux";
+          terminal = spawn "${lib.getExe pkgs.ghostty}";
+          tmux = spawn "${lib.getExe pkgs.ghostty}" "-e" "tmux";
         in
         {
           "XF86AudioMute".action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";

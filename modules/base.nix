@@ -55,7 +55,7 @@
           EDITOR = "nvim";
           SUDO_EDITOR = "nvim";
           BROWSER = "firefox";
-          TERMINAL = "kitty";
+          TERMINAL = "ghostty";
           TMUX_SESSION_FILE = "${config.var.configDir}/modules/tui/tmux/tmux_sessions";
           # SSH_ASKPASS_REQUIRE = "prefer";
           XDG_RUNTIME_DIR = "/run/user/$UID";

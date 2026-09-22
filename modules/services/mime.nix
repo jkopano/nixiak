@@ -13,7 +13,7 @@
         directory = [ "nautilus.desktop" ];
         office = [ "libreoffice.desktop" ];
         pdf = [ "org.pwmt.zathura.desktop" ];
-        terminal = [ "kitty.desktop" ];
+        terminal = [ "ghostty.desktop" ];
         discord = [ "vesktop.desktop" ];
         archive = [ "nautilus.desktop" ];
       };
