@@ -13,6 +13,7 @@ in
   environment.systemPackages = with pkgs; [
     bat
     curl
+    devenv
     fd
     fzf
     gcc
@@ -66,6 +67,9 @@ in
         (aspect ../../modules/tui/nh.nix).tui._.nh.homeManager
         (aspect ../../modules/services/git.nix).services._.git.homeManager
       ];
+      programs.direnv.stdlib = ''
+        eval "$(${pkgs.devenv}/bin/devenv direnvrc)"
+      '';
       programs.fzf.historyWidget.zsh.command = "";
       # The repository currently tracks laptop-specific store symlinks at these
       # paths. Replace them with WSL-owned Home Manager files after cloning.
