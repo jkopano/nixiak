@@ -4,10 +4,8 @@ Personal NixOS flake, built with `den` and Home Manager.
 
 ## Overview
 
-At least for now flake only defines one machine with one user,
-will definitely expand it in future.
-
-- desktop: Niri on Wayland
+- `jkopano`: Niri desktop
+- `wsl`:
 - platform: `x86_64-linux`
 
 ## Usage
