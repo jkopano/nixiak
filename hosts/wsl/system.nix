@@ -15,6 +15,7 @@ in
     curl
     fd
     fzf
+    gcc
     git
     htop
     imagemagick
