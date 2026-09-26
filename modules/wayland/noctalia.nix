@@ -149,33 +149,33 @@
               {
                 enabled = true;
                 name = "Official Noctalia Plugins";
-                url = "https://github.com/noctalia-dev/noctalia-plugins";
+                url = "https://github.com/noctalia-dev/legacy-v4-plugins";
               }
             ];
             states = {
               screen-recorder = {
                 enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               keybind-cheatsheet = {
                 enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               tailscale = {
                 enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               polkit-agent = {
                 enabled = false;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               niri-overview-launcher = {
                 enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               notes-scratchpad = {
                 enabled = true;
-                sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+                sourceUrl = "https://github.com/noctalia-dev/legacy-v4-plugins";
               };
               git-companion = {
                 enabled = true;

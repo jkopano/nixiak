@@ -43,7 +43,6 @@
           wofi
           fuzzel
           wluma
-          celeste
 
           wl-color-picker
           wl-clipboard

@@ -29,24 +29,33 @@
         # })
 
         (_final: prev: {
+          aseprite = prev.aseprite.overrideAttrs (old: rec {
+            version = "1.3.17.2";
+            src = prev.fetchFromGitHub {
+              owner = "aseprite";
+              repo = "aseprite";
+              tag = "v${version}";
+              fetchSubmodules = true;
+              hash = "sha256-+rLrk/c3WLqNhXQ7J0eeqZ3h4PsbZad61Cxw0RubWgk=";
+            };
+            nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.git ];
+          });
+
           gtksourceview5 = prev.gtksourceview5.overrideAttrs (_old: {
             doCheck = false;
           });
 
           pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
-            (
-              python-final: python-prev: {
-                paste = python-prev.paste.overridePythonAttrs (old: {
-                  nativeCheckInputs = (old.nativeCheckInputs or [ ]) ++ [
-                    python-final.setuptools
-                  ];
-                });
-              }
-            )
+            (python-final: python-prev: {
+              paste = python-prev.paste.overridePythonAttrs (old: {
+                nativeCheckInputs = (old.nativeCheckInputs or [ ]) ++ [
+                  python-final.setuptools
+                ];
+              });
+            })
           ];
         })
 
-        inputs.niri.overlays.niri
         # inputs.neovim-nightly-overlay.overlays.default
       ];
     };
