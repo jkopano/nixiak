@@ -7,9 +7,9 @@
       lib,
       ...
     }:
-    let
-      configDir = "/home/kuba/.config/nixos";
-    in
+    # let
+    #   configDir = "/home/kuba/.config/nixos";
+    # in
     {
       home = {
         packages = with pkgs; [
