@@ -5,7 +5,7 @@ Personal NixOS flake, built with `den` and Home Manager.
 ## Overview
 
 - `jkopano`: Niri desktop
-- `wsl`:
+- `wsl`
 - platform: `x86_64-linux`
 
 ## Usage

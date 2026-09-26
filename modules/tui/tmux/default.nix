@@ -10,7 +10,14 @@
         ...
       }:
       let
-        stylix = config.lib.stylix.colors;
+        stylix = config.lib.stylix.colors or {
+          base00 = "131313";
+          base01 = "1d2021";
+          base08 = "f38ba8";
+          base0A = "f9e2af";
+          base0C = "94e2d5";
+          base0D = "89b4fa";
+        };
         hex = str: "#${str}";
 
         seshFilter = ''--icons | rg -v \"Downloads|config/nixos/.\|~/Documents$|Documents/.*/.*/.*/\"'';

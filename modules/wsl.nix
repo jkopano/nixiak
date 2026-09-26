@@ -29,6 +29,7 @@ in
 
     wsl = inputs.nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit inputs; };
       modules = [
         common
         inputs.home-manager.nixosModules.home-manager
@@ -42,7 +43,7 @@ in
     sshUser = "kuba";
     sshOpts = [
       "-p"
-      "2222"
+      "2223"
     ];
     autoRollback = true;
     magicRollback = true;
